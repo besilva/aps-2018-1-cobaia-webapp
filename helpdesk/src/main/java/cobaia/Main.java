@@ -27,7 +27,11 @@ import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.HtmlEmail;
 
+import com.mitchellbosecke.pebble.PebbleEngine;
+
 import cobaia.modelo.Usuario;
+import cobaia.viewHelper.CurrencyConverterFilter;
+import cobaia.viewHelper.MyPebbleExtensions;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
@@ -51,7 +55,10 @@ public class Main {
 
 		Spark.staticFileLocation("/public");
 		// final TemplateEngine velocity = new VelocityTemplateEngine();
-		final TemplateEngine pebble = new PebbleTemplateEngine();
+		PebbleEngine engine = new PebbleEngine.Builder().extension(new MyPebbleExtensions()).build();
+		final TemplateEngine pebble = new PebbleTemplateEngine(engine);
+		
+
 		DebugScreen.enableDebugScreen();
 		final SimpleDateFormat ISODateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		final SimpleDateFormat ISOTimeFormat = new SimpleDateFormat("hh:mm");

@@ -15,3 +15,9 @@ body {
 h3, .description {
 	margin: 1em 0;
 }
+.cotacao{
+	margin-bottom:20px;
+	background-color: #adb0b3;
+	border-radius:5px;
+	font-size: 20px;
+}
