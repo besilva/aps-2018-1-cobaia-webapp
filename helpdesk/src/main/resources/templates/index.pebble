@@ -42,9 +42,8 @@
       </form>
     </div>
   </nav>
-
+{{ 1 |conversaoMoeda("EUR", "BRL")}}
   <main role="main" class="container">
-  <div class="cotacao">Cotação atual do Euro: {{ 1 |conversaoMoeda("EUR", "BRL")}}</div>
     <div class="jumbotron">
       <h1>WebApp para gestão de cursos de extensão</h1>
       <p class="lead">Este aplicativo cobaia permite cadastra cursos e gerenciar as vagas com um sistema de inscrições. É apenas uma <em>cobaia</em>, <strong>não é sério!</strong></p>
